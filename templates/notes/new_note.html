@@ -1,0 +1,28 @@
+{% include '../include/header.html' %}
+            <!--Card Body-->
+            <div class="card-body">
+                <form action = "" method="post">
+                    {% csrf_token %}
+
+                <!-- <input type="radio" name="options" id="option1" > 
+                <label for = "option1"> Today</label>
+                <input type="radio" name="options" id="option2">
+                <label for = "option2"> Tomorrow</label>
+                <input type="radio" name="options" id="option3">
+                <label for = "option3"> This week</label>
+                <input type="radio" name="options" id="option4">
+                <label for = "option4"> Next week</label>
+                <input type="radio" name="options" id="option5">
+                <label for = "option5"> Future</label> -->
+                    {% for field in forms %}
+                        {{ field.label_tag }}
+                        {{ field }}<br>
+                    {% endfor %}
+                    <button class = "btn btn-primary">Send</button>
+               </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

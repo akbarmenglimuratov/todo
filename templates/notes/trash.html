@@ -1,0 +1,30 @@
+{% include '../include/header.html' %}
+            <!--Card Body-->
+            <div class="card-body">
+                <span class = "float-right">
+                    <i class = "fas fa-user"></i>
+                    <span class = "mr-4">{{ data.user }}</span>
+                </span>
+                {% for time in sort_by_when %}
+                    <p>
+                        <h4> {{ time }}</h4>
+                        {% for datas in data.user.users_notes.notes.all %}
+                            {% if time == datas.get_when_display and datas.deleted == True %}
+                                <blockquote class="blockquote">
+                                    <p class="mb-0">
+                                        <input type = "checkbox" value = "{{ datas.id }}" id = "{{ datas.id }}" {% if datas.done == True %} checked {% endif %}>
+                                        <label for = "{{ datas.id }}">{{ datas.title }}</label>
+                                    </p>
+                                    <footer class="blockquote-footer">{{ datas.text }}</footer>
+                                </blockquote>
+                            {% endif %}
+                        {% endfor %}
+                    </p>
+                    <hr>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

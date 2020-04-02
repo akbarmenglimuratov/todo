@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        To Do List
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="{% static 'js/js.js' %}"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a href = "/" class="navbar-brand">To Do</a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+    <div class="page">
+        <!--Card-->
+        <div class="card">
+            <!--Card Header-->
+            <div class="card-header">
+                <p> 
+                    <i class="fa fa-bars"></i> 
+                    <a href = "/note/new_note" class = "badge badge-light ml-4"> 
+                        <i class="fas fa-plus"></i> 
+                    </a>
+                    <a href = "#" class = "badge badge-light ml-4">
+                        <i class="fas fa-calendar" aria-hidden="true"></i>
+                    </a>
+                    <span class="float-right">
+                        <a href = "/note/archive" class="badge badge-light mr-4">
+                            Archive
+                            <i class="fas fa-archive"></i>
+                        </a>
+                        <a href = "/note/trash" class="badge badge-light mr-4">
+                            Trash
+                            <i class = "far fa-trash-alt"></i>
+                        </a>
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </span>
+                </p>
+            </div>
